@@ -265,12 +265,6 @@ client.on('interactionCreate', async interaction => {
 async function handleVouchCommand(interaction) {
     await interaction.deferReply({ ephemeral: true });
 
-    if (!hasStaffAccess(interaction)) {
-        return interaction.editReply({
-            content: '❌ You do not have permission to create vouches.'
-        });
-    }
-
     const seller = cleanInput(interaction.options.getString('seller'));
     const product = cleanInput(interaction.options.getString('product'));
     const stars = interaction.options.getInteger('stars');
@@ -440,7 +434,7 @@ async function handleVouchPanelCommand(interaction) {
                 '• Complete a purchase with a seller',
                 '• Give an honest 1–5 star rating',
                 '• Include the product and optional feedback',
-                '• Staff records the vouch using `/vouch`',
+                '• Anyone can record a vouch using `/vouch`',
                 '',
                 'Thank you for supporting **SOURCE SHOP**.'
             ].join('\n'))

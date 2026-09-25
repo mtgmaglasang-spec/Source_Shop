@@ -1,3 +1,17 @@
+// --- EXPRESS SERVER PARA SA RENDER 24/7 ---
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+    res.send('Source Shop Bot is online 24/7!');
+});
+
+app.listen(PORT, () => {
+    console.log(`🌍 Web server is running on port ${PORT}`);
+});
+// ----------------------------------------
+
 // Source Shop — Professional Vouch System
 // Discord.js v14
 // Existing vouches.json data remains compatible.
